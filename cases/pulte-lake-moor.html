@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pulte Homes Lake Moor Project | Dust Claims</title>
+<meta name="description" content="Yakubik v. PN II Inc. (Pulte Homes). Temporary Restraining Order granted July 15, 2026. Documented dust violations, after-hours work, and dangerous equipment on residential streets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.case-header{background:var(--bg-2);padding:4rem 2.5rem 3rem;border-bottom:1px solid var(--border);}
+.case-header-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.3fr 0.7fr;gap:4rem;align-items:start;}
+.case-h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink);margin-bottom:0.75rem;}
+.case-subtitle{font-family:var(--font-display);font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.case-status-box{background:#fff;border:1px solid var(--border);padding:1.75rem;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.status-row{display:flex;justify-content:space-between;align-items:flex-start;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.82rem;gap:1rem;}
+.status-row:last-child{border-bottom:none;}
+.status-label{color:var(--muted);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;flex-shrink:0;padding-top:0.1rem;}
+.status-value{color:var(--ink-2);font-weight:400;text-align:right;line-height:1.4;}
+.provision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem;}
+.provision{background:#fff;border:1px solid var(--border);border-top:3px solid var(--orange);padding:1.75rem;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+.provision-num{font-family:var(--font-display);font-size:3rem;color:rgba(232,114,10,0.15);line-height:1;margin-bottom:0.75rem;}
+.provision h3{font-family:var(--font-display);font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);margin-bottom:0.5rem;line-height:1.2;}
+.provision p{font-size:0.83rem;color:var(--ink-2);font-weight:300;line-height:1.7;}
+.provision-cite{margin-top:0.75rem;font-size:0.68rem;color:var(--muted);font-weight:400;letter-spacing:0.06em;border-top:1px solid var(--border);padding-top:0.6rem;}
+.timeline-col{position:relative;padding-left:2rem;}
+.timeline-col::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),transparent);}
+.tl-item{position:relative;padding-bottom:2rem;}
+.tl-item::before{content:'';position:absolute;left:-2rem;top:7px;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+.tl-date{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:0.25rem;}
+.tl-event{font-size:0.88rem;color:var(--ink-2);font-weight:300;line-height:1.65;}
+.tl-event strong{color:var(--ink);font-weight:600;}
+.ev-header{display:flex;align-items:center;gap:1.25rem;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border);}
+.ev-letter{font-family:var(--font-display);font-size:3rem;color:var(--orange);opacity:0.4;line-height:1;letter-spacing:0.04em;flex-shrink:0;}
+.ev-title{font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:0.2rem;}
+.ev-desc{font-size:0.78rem;color:var(--muted);font-weight:300;}
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:2rem;}
+.video-item{background:#fff;border:1px solid var(--border);padding:1.25rem;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+.video-embed{position:relative;aspect-ratio:16/9;background:var(--bg-3);margin-bottom:0.75rem;overflow:hidden;}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.video-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;}
+.video-ph-icon{font-family:var(--font-display);font-size:2.5rem;color:rgba(232,114,10,0.2);margin-bottom:0.35rem;}
+.video-ph-label{font-family:var(--font-display);font-size:1rem;letter-spacing:0.06em;color:rgba(26,24,21,0.25);margin-bottom:0.25rem;}
+.video-ph-note{font-size:0.68rem;color:var(--muted);font-weight:300;}
+.video-meta{font-size:0.72rem;color:var(--muted);font-weight:300;line-height:1.5;}
+.video-meta strong{color:var(--ink-2);font-weight:600;}
+@media(max-width:900px){
+  .case-header-inner{grid-template-columns:1fr;gap:2rem;}
+  .case-header{padding:3rem 1.5rem 2rem;}
+  .provision-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="alert-bar">
+  Temporary Restraining Order Issued Against Pulte Homes 3 Kids Mine Project
+  <a href="/cases/pulte-lake-moor.html">Click Here For Updates</a>
+</div>
+
+<nav class="site-nav" id="site-nav"></nav>
+<nav class="nav-mobile" id="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/private-enforcement/">Private Enforcement</a>
+  <a href="/blog/">Blog</a>
+  <a href="/about/">About</a>
+  <a href="/contact/" class="cta">Report a Claim</a>
+</nav>
+
+<!-- CASE HEADER -->
+<header class="case-header">
+  <div class="case-header-inner">
+    <div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+        <span class="badge badge-orange">Temporary Restraining Order Active</span>
+        <span class="badge badge-gray">Active Litigation</span>
+      </div>
+      <h1 class="case-h1">Yakubik, et al.<br>v. Pulte Homes</h1>
+      <div class="case-subtitle">PN II, Inc. and Western States Contracting, Inc.</div>
+      <p class="lead">On July 15, 2026, the Eighth Judicial District Court granted a Temporary Restraining Order against Pulte Homes and its general contractor, ordering them to cease fugitive dust violations, after-hours construction, and unauthorized use of heavy equipment on public residential streets adjacent to the Lake Moor development in Henderson, Nevada.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="/contact/" class="btn-primary">Join This Case</a>
+        <a href="#evidence" class="btn-outline">View Evidence</a>
+      </div>
+    </div>
+    <div>
+      <div class="case-status-box">
+        <div class="status-row"><span class="status-label">Court</span><span class="status-value">Eighth Judicial District<br>Clark County, Nevada</span></div>
+        <div class="status-row"><span class="status-label">Department</span><span class="status-value">Dept. 16</span></div>
+        <div class="status-row"><span class="status-label">Judge</span><span class="status-value">Hon. Timothy C. Williams</span></div>
+        <div class="status-row"><span class="status-label">Plaintiff Atty</span><span class="status-value">Joe Yakubik, Esq., Bar No. 17015<br>Assured Law</span></div>
+        <div class="status-row"><span class="status-label">Order Issued</span><span class="status-value">July 15, 2026</span></div>
+        <div class="status-row"><span class="status-label">Bond</span><span class="status-value">$2,500</span></div>
+        <div class="status-row"><span class="status-label">Injunction Hearing</span><span class="status-value">A hearing for permanent injunction is set for 7/29/2026</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- WHAT THE ORDER REQUIRES -->
+<section class="s" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="eyebrow">Court Order</div>
+    <h2 class="section-title">What the Order Requires</h2>
+    <p class="lead">Three mandatory restraints effective immediately and through the pendency of any permanent injunction.</p>
+    <div class="provision-grid">
+      <div class="provision">
+        <div class="provision-num">1</div>
+        <h3>Dust Control Compliance</h3>
+        <p>Defendants must implement Best Available Control Measures, cease all construction when emissions exceed permitted limits, and not cause or allow visible emissions of particulate matter to extend more than 100 feet or cross a property line.</p>
+        <div class="provision-cite">CC AQR Sections 94.13(c), 94.14(a)(3), 94.14(a)(4)</div>
+      </div>
+      <div class="provision">
+        <div class="provision-num">2</div>
+        <h3>Authorized Hours Only</h3>
+        <p>No construction activity, equipment operation, or material delivery outside the hours authorized by applicable permits and the Henderson Municipal Code.</p>
+        <div class="provision-cite">Henderson Municipal Code, Permit Conditions</div>
+      </div>
+      <div class="provision">
+        <div class="provision-num">3</div>
+        <h3>No Heavy Equipment on Public Streets</h3>
+        <p>Wheel loaders, excavators, and articulated haul trucks may not be operated, staged, or hauled on adjacent public streets except as authorized by applicable permits and approved traffic control plans.</p>
+        <div class="provision-cite">State Law and Permit Conditions</div>
+      </div>
+    </div>
+    <div style="margin-top:2rem;">
+      <div class="callout">
+        <h4>Note</h4>
+        <p>The Order does not prohibit lawful construction activity conducted in compliance with the Order and applicable permits and regulations. Defendants were already required to comply with these standards before the Order was filed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLAIM ALLEGATIONS -->
+<section class="s" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="eyebrow">Claim Allegations</div>
+    <h2 class="section-title">What We Are Claiming</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;">
+      <div class="allegation-box">
+        <div class="allegation-word">DUST</div>
+        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Fugitive dust crossing property lines, coating exterior surfaces, contaminating pools, and clogging HVAC systems in violation of Clark County Air Quality Regulations</div>
+      </div>
+      <div class="allegation-box">
+        <div class="allegation-word">NOISE</div>
+        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Construction noise and activity documented outside permitted hours, disturbing residents and damaging quality of life in violation of the Henderson Municipal Code</div>
+      </div>
+      <div class="allegation-box">
+        <div class="allegation-word">2:33<span style="font-size:1.1rem;">am</span></div>
+        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Security camera footage confirms excavator delivery to a public residential street at 2:33 a.m. on May 19, 2026. No permit or traffic control plan in evidence</div>
+      </div>
+      <div class="allegation-box">
+        <div class="allegation-word">ROAD</div>
+        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Dangerous heavy equipment including wheel loaders, excavators, and articulated dump trucks operated on public residential streets without authorization, causing surface damage</div>
+      </div>
+    </div>
+    <div class="join-cta-box" style="margin-top:2rem;">
+      <p>Are You Affected?</p>
+      <a href="/contact/" class="btn-join">Experiencing Any of These? Click Here to See Your Options for Joining the Case or Pursuing Your Own Recovery</a>
+    </div>
+    <div style="margin-top:2rem;">
+      <h3 style="font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);margin-bottom:1rem;">Potential Damages</h3>
+      <div class="detail-row"><div class="detail-label">Health</div><div class="detail-value">Health damages arising from exposure to airborne particulate matter, dust, and construction-related contaminants</div></div>
+      <div class="detail-row"><div class="detail-label">Loss of Use</div><div class="detail-value">Loss of use of property, including outdoor areas, pools, and HVAC-dependent living spaces</div></div>
+      <div class="detail-row"><div class="detail-label">Repairs</div><div class="detail-value">Property damage repairs to pools, HVAC systems, exterior surfaces, and street-facing structures</div></div>
+      <div class="detail-row"><div class="detail-label">Maintenance</div><div class="detail-value">Ongoing maintenance costs incurred while violations continue, including pool cleaning, filter replacement, and air purification</div></div>
+      <div class="detail-row"><div class="detail-label">Property Value</div><div class="detail-value">Diminished property value caused by proximity to poorly managed construction activities</div></div>
+      <div class="detail-row"><div class="detail-label">Medical</div><div class="detail-value">Medical monitoring and treatment costs related to exposure</div></div>
+      <div class="detail-row"><div class="detail-label">Punitive</div><div class="detail-value">Punitive damages for willful and knowing violations of applicable regulations and permit conditions</div></div>
+      <div class="detail-row"><div class="detail-label">Other</div><div class="detail-value">All other damages as proven at trial</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="s" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="eyebrow">Pre-Litigation Record</div>
+    <h2 class="section-title">Enforcement Timeline</h2>
+    <p class="lead">Before filing suit, Assured Law followed proper channels. This is the documented record of what was reported and what agencies failed to act on.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;">
+      <div class="timeline-col">
+        <div class="tl-item"><div class="tl-date">March 4, 2026</div><div class="tl-event"><strong>After-hours work documented</strong> at 6:54 p.m. and 7:00 p.m. Heavy equipment operating in active dust cloud at Athens Ave. and Racetrack Rd.</div></div>
+        <div class="tl-item"><div class="tl-date">April 8, 2026</div><div class="tl-event"><strong>Cease and desist letter issued</strong> to Western States Contracting, Inc. via certified mail and email. No remediation followed.</div></div>
+        <div class="tl-item"><div class="tl-date">May 19, 2026, 2:33 a.m.</div><div class="tl-event"><strong>Excavator delivered to public residential street.</strong> Captured on security camera. No permit or traffic control plan in evidence.</div></div>
+        <div class="tl-item"><div class="tl-date">May 21, 2026</div><div class="tl-event">Multiple dump truck violations documented. <strong>Pool sediment confirmed</strong> in neighboring residential pool.</div></div>
+        <div class="tl-item"><div class="tl-date">May 27, 2026</div><div class="tl-event"><strong>Private compliance notice</strong> issued to Defendants and forwarded to noticed agencies. No enforcement action followed from any agency.</div></div>
+      </div>
+      <div class="timeline-col">
+        <div class="tl-item"><div class="tl-date">June 5 to 6, 2026</div><div class="tl-event">Additional violations documented. <strong>June 6: active dust storm with Henderson Police Department present on-site</strong> with no enforcement action taken.</div></div>
+        <div class="tl-item"><div class="tl-date">June 8 to 9, 2026</div><div class="tl-event"><strong>Work began with no water applied.</strong> Multiple dump trucks raising dust clouds on residential streets.</div></div>
+        <div class="tl-item"><div class="tl-date">July 15, 2026</div><div class="tl-event"><strong>Temporary Restraining Order Granted.</strong> Judge Timothy C. Williams orders immediate compliance. Hearing for permanent injunction set for 7/29/2026.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE GALLERY -->
+<section class="s" style="background:var(--bg-2);" id="evidence">
+  <div class="section-inner">
+    <div class="eyebrow">Filed Evidence</div>
+    <h2 class="section-title">Exhibit Documentation</h2>
+    <p class="lead">Photographic and video evidence filed in support of Plaintiffs' Application. Exhibits A-1 through Series P.</p>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;font-weight:300;">To add photos: save files as A-1.jpg, A-2.jpg, etc. and upload to the <code>/img/exhibits/</code> folder in GitHub. They will appear here automatically.</p>
+
+    <div style="margin-top:3rem;">
+      <!-- SERIES A -->
+      <div style="margin-bottom:3rem;">
+        <div class="ev-header">
+          <div class="ev-letter">A</div>
+          <div><div class="ev-title">Fugitive Dust, General Site Documentation</div><div class="ev-desc">Loader, excavator, and haul truck operations generating visible dust clouds near residential properties</div></div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="/img/exhibits/A-1.jpg" alt="Exhibit A-1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">A-1</div><div class="gallery-placeholder-desc">Loader raising a visible dust cloud near residential properties</div></div><div class="gallery-caption">A-1, Loader raising visible dust cloud near residential properties</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/A-2.jpg" alt="Exhibit A-2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">A-2</div><div class="gallery-placeholder-desc">Loader and visible dust, residential homes in background</div></div><div class="gallery-caption">A-2, Loader and dust, residential homes in background</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/A-3.jpg" alt="Exhibit A-3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">A-3</div><div class="gallery-placeholder-desc">Articulated dump truck and dust cloud at residential street corner</div></div><div class="gallery-caption">A-3, Dump truck and dust cloud at residential street corner</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/A-4.jpg" alt="Exhibit A-4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">A-4</div><div class="gallery-placeholder-desc">Excavator raising a visible dust cloud near residential properties</div></div><div class="gallery-caption">A-4, Excavator raising dust cloud near residential properties</div></div>
+        </div>
+      </div>
+
+      <!-- SERIES C -->
+      <div style="margin-bottom:3rem;">
+        <div class="ev-header">
+          <div class="ev-letter">C</div>
+          <div><div class="ev-title">After-Hours Work</div><div class="ev-desc">Construction activity documented outside permitted hours, including 2:33 a.m. and 6:54 p.m.</div></div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="/img/exhibits/C-1.jpg" alt="Exhibit C-1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">C-1</div><div class="gallery-placeholder-desc">March 4, 2026, 7:00 p.m., construction site after dark</div></div><div class="gallery-caption">C-1, March 4, 2026, 7:00 p.m., after dark</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/C-2.jpg" alt="Exhibit C-2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">C-2</div><div class="gallery-placeholder-desc">March 4, 2026, nighttime, heavy equipment and dust cloud at Athens Ave.</div></div><div class="gallery-caption">C-2, March 4, 2026, nighttime, equipment and dust cloud</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/C-4.jpg" alt="Exhibit C-4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">C-4</div><div class="gallery-placeholder-desc">Security camera, 2:33 a.m., May 19, 2026, excavator on residential street</div></div><div class="gallery-caption">C-4, Security cam, 2:33 a.m., May 19, 2026</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/C-5.jpg" alt="Exhibit C-5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">C-5</div><div class="gallery-placeholder-desc">Flatbed truck and equipment on residential street at night</div></div><div class="gallery-caption">C-5, Flatbed truck on residential street at night</div></div>
+        </div>
+      </div>
+
+      <!-- SERIES D -->
+      <div style="margin-bottom:3rem;">
+        <div class="ev-header">
+          <div class="ev-letter">D</div>
+          <div><div class="ev-title">Heavy Equipment on Public Streets</div><div class="ev-desc">Loaders, excavators, and haul trucks on residential streets without authorization. Street damage documented.</div></div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="/img/exhibits/D-1.jpg" alt="Exhibit D-1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">D-1</div><div class="gallery-placeholder-desc">Loader carrying utility pipe on public residential street</div></div><div class="gallery-caption">D-1, Loader carrying utility pipe on residential street</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/D-3.jpg" alt="Exhibit D-3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">D-3</div><div class="gallery-placeholder-desc">Loader carrying steel trench plate over public sidewalk</div></div><div class="gallery-caption">D-3, Loader carrying steel trench plate over sidewalk</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/D-4.jpg" alt="Exhibit D-4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">D-4</div><div class="gallery-placeholder-desc">Articulated dump truck on public residential street</div></div><div class="gallery-caption">D-4, Articulated dump truck on residential street</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/D-5.jpg" alt="Exhibit D-5" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">D-5</div><div class="gallery-placeholder-desc">Surface damage and spalling to concrete on public residential street</div></div><div class="gallery-caption">D-5, Surface damage and spalling to street concrete</div></div>
+        </div>
+      </div>
+
+      <!-- SERIES G/K/L -->
+      <div style="margin-bottom:3rem;">
+        <div class="ev-header">
+          <div class="ev-letter">G K L</div>
+          <div><div class="ev-title">Property Damage, Pools, HVAC, and Home Surfaces</div><div class="ev-desc">Fine sediment and dust documented in residential pools, on AC units and filters, and on exterior surfaces</div></div>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="/img/exhibits/G-1.jpg" alt="Exhibit G-1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">G-1</div><div class="gallery-placeholder-desc">Residential pool with visible sediment and debris</div></div><div class="gallery-caption">G-1, Residential pool with visible sediment</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/G-2.jpg" alt="Exhibit G-2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">G-2</div><div class="gallery-placeholder-desc">May 21, fine sediment suspended in pool water and settled on pool floor</div></div><div class="gallery-caption">G-2, Fine sediment suspended and settled on pool floor</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/K-1.jpg" alt="Exhibit K-1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">K-1</div><div class="gallery-placeholder-desc">Dust and sediment accumulated on air-conditioning unit and filter</div></div><div class="gallery-caption">K-1, Dust and sediment on AC unit and filter</div></div>
+          <div class="gallery-item"><img src="/img/exhibits/L-2.jpg" alt="Exhibit L-2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="gallery-placeholder" style="display:none"><div class="gallery-placeholder-label">L-2</div><div class="gallery-placeholder-desc">Dust accumulated along window seal and track</div></div><div class="gallery-caption">L-2, Dust accumulation along window seal and track</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO EVIDENCE -->
+<section class="s" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="eyebrow">Exhibit Series N</div>
+    <h2 class="section-title">Video Evidence, 22 Clips Filed</h2>
+    <p class="lead">Security camera, dashcam, and personal phone footage documenting violations from March through June 2026.</p>
+    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;font-weight:300;">To add videos: upload to YouTube (unlisted) and replace the placeholder div with an iframe. Instructions in README.md.</p>
+    <div class="video-grid">
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-1</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-1</strong> May 21, 2026, 9:53 a.m.<br>Large dump truck raising dust</div></div>
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-4</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-4</strong> May 21, 2026, 2:24 p.m.<br>Carrying pipe down the road</div></div>
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-5</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-5</strong> May 21, 2026, 4:48 p.m.<br>Mine hauler blocking the street with dust</div></div>
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-11</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-11</strong> June 6, 2026, 12:31 p.m.<br>Active dust storm, HPD present, no enforcement</div></div>
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-12</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-12</strong> June 8, 2026, 7:01 a.m.<br>Start of work with no water applied</div></div>
+      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-15</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-15</strong> June 9, 2026, 3:17 p.m.<br>Two trucks, dirt blowing into the house</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN CTA -->
+<div class="cta-band">
+  <h2>Affected by This Project?</h2>
+  <p>If you live near the Lake Moor development at Athens Avenue and Racetrack Road in Henderson and have experienced dust, property damage, or pool or HVAC contamination, you may have a claim. The review is free.</p>
+  <a href="/contact/" class="btn-primary">Free Case Review</a>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/js/site.js"></script>
+<script>renderNav('cases'); renderFooter();</script>
+</body>
+</html>
