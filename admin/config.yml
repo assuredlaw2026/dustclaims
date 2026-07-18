@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    files:
+      - label: "All Posts"
+        name: "all_posts"
+        file: "_data/posts.json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} -- {{fields.date}}"
+            fields:
+              - { label: "Title",    name: "title",    widget: "string" }
+              - { label: "Slug (URL, no spaces, lowercase, hyphens only)",
+                  name: "slug",     widget: "string" }
+              - { label: "Date",     name: "date",     widget: "datetime" }
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                options: ["Case Update","Legal Analysis","Know Your Rights","Agency Watch","News"]
+              - { label: "Author",   name: "author",   widget: "string", default: "Assured Law" }
+              - { label: "Excerpt (1-2 sentences shown in blog listing)",
+                  name: "excerpt",  widget: "text" }
+              - { label: "Full Post Content",
+                  name: "content",  widget: "markdown" }
+
+  - name: "active_sites"
+    label: "Active Sites"
+    files:
+      - label: "All Active Sites"
+        name: "all_sites"
+        file: "_data/active-sites.json"
+        fields:
+          - label: "Sites"
+            name: "sites"
+            widget: "list"
+            summary: "{{fields.name}} -- {{fields.status}}"
+            fields:
+              - { label: "Site / Project Name", name: "name",        widget: "string" }
+              - { label: "Contractor Name",      name: "contractor",  widget: "string" }
+              - { label: "Address or Location",  name: "address",     widget: "string" }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options: ["TRO Active","Active Lawsuit","Preliminary Injunction","Monitoring","Settled","Closed"]
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Permit or Case Number (optional)", name: "permit", widget: "string", required: false }
+              - { label: "Date Added",   name: "dateAdded",   widget: "date" }
+              - { label: "Last Updated", name: "lastUpdated", widget: "date" }
