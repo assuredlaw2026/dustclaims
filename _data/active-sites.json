@@ -1,0 +1,24 @@
+{
+  "sites": [
+    {
+      "name": "Pulte Lake Moor, Athens Ave / Racetrack Rd",
+      "contractor": "PN II, Inc. (Pulte Homes) / Western States Contracting, Inc.",
+      "address": "Athens Avenue at Racetrack Road, Henderson, Nevada",
+      "status": "TRO Active",
+      "description": "Active construction for the Lake Moor residential development. Documented violations include fugitive dust crossing property lines, after-hours construction at 2:33 a.m., wheel loaders and dump trucks on public residential streets without authorization, and sediment contaminating neighboring pools and HVAC units. Temporary Restraining Order granted July 15, 2026. Hearing for permanent injunction set for 7/29/2026.",
+      "permit": "Yakubik et al. v. PN II, Inc., Eighth Judicial District Court, Clark County, NV",
+      "dateAdded": "2026-07-15",
+      "lastUpdated": "2026-07-15"
+    },
+    {
+      "name": "Three Kids Mine Site, Henderson Remediation Area",
+      "contractor": "City of Henderson / Remediation Contractors (TBD)",
+      "address": "Lake Las Vegas Area, Henderson, Nevada",
+      "status": "Monitoring",
+      "description": "Former open-pit manganese mine undergoing active remediation under the 2023 NDEP Record of Decision. Perimeter air monitoring began May 2024. Contaminants include lead, arsenic, manganese, and petroleum. Assured Law is monitoring air quality compliance and evaluating class action claims on behalf of adjacent homeowners.",
+      "permit": "NDEP Record of Decision, November 2023",
+      "dateAdded": "2026-01-01",
+      "lastUpdated": "2026-07-15"
+    }
+  ]
+}
