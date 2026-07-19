@@ -37,8 +37,12 @@
       </div>
       <div>
         <div class="form-box">
-          <form name="case-review" method="POST" data-netlify="true" id="caseForm" onsubmit="handleSubmit(event)">
-            <input type="hidden" name="form-name" value="case-review">
+          <form name="case-review" method="POST" id="caseForm" onsubmit="handleSubmit(event)">
+            <!-- Web3Forms access key. Not a secret: it is a public submission token bound to the
+                 destination inbox. Get it at https://web3forms.com and paste it below. -->
+            <input type="hidden" name="access_key" value="fd26440c-d5b4-47ec-8bd4-b94d2ec1ec09">
+            <input type="hidden" name="subject" value="New case review request — dustclaims.com">
+            <input type="hidden" name="from_name" value="Dust Claims Website">
             <div style="font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.3rem;">Start Your Case Review</div>
             <div style="font-size:0.82rem;color:var(--muted);font-weight:300;margin-bottom:2rem;">Free, no-obligation. We respond within 1 business day.</div>
             <div class="form-row">
@@ -72,8 +76,9 @@
               </select></div>
             <div class="form-group"><label>Additional Details (optional)</label>
               <textarea name="details" placeholder="Describe what you have experienced, dates, violations observed, damage to your property..."></textarea></div>
-            <div style="display:none;"><label>Do not fill this out: <input name="bot-field"></label></div>
-            <button type="submit" class="form-submit">Submit for Free Review</button>
+            <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+            <button type="submit" class="form-submit" id="formSubmitBtn">Submit for Free Review</button>
+            <p class="form-error" id="formError" role="alert" style="display:none;margin-top:0.9rem;font-size:0.82rem;color:#c0392b;font-weight:400;line-height:1.6;"></p>
             <p class="form-disclaimer">No attorney-client relationship is formed by submitting this form. This is an attorney advertisement. Assured Law, Joe Yakubik, Esq., Bar No. 17015.</p>
           </form>
           <div class="form-success" id="formSuccess">
@@ -94,9 +99,37 @@
   function handleSubmit(e) {
     e.preventDefault();
     const form = document.getElementById('caseForm');
-    fetch('/', {method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()})
-      .then(() => { form.style.display='none'; document.getElementById('formSuccess').style.display='block'; })
-      .catch(() => alert('There was a problem submitting the form. Please call us directly.'));
+    const btn = document.getElementById('formSubmitBtn');
+    const errorBox = document.getElementById('formError');
+
+    const data = new FormData(form);
+    // Let the attorney reply straight to the claimant from the notification email.
+    data.set('replyto', data.get('email') || '');
+
+    errorBox.style.display = 'none';
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    const fail = (msg) => {
+      btn.disabled = false;
+      btn.textContent = 'Submit for Free Review';
+      errorBox.textContent = msg + ' Your details were not sent. Please call us at (702) 825-3747.';
+      errorBox.style.display = 'block';
+    };
+
+    fetch('https://api.web3forms.com/submit', {method:'POST', body:data})
+      // fetch only rejects on network failure, so a 4xx/5xx still lands here.
+      // Check status and the API's own success flag before claiming the form went through.
+      .then(res => res.json().catch(() => ({})).then(body => ({ok: res.ok, body})))
+      .then(({ok, body}) => {
+        if (!ok || body.success !== true) {
+          fail(body.message || 'We could not submit your request.');
+          return;
+        }
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      })
+      .catch(() => fail('We could not reach our servers.'));
   }
 </script>
 </body>
