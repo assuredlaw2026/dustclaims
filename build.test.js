@@ -41,3 +41,32 @@ test('includes Article JSON-LD with the post date', () => {
   assert.match(html, /"@type":"Article"/);
   assert.match(html, /"datePublished":"2026-07-15T12:00:00.000Z"/);
 });
+
+test('wraps post in section.s for proper padding CSS', () => {
+  const html = renderPost(post);
+  assert.match(html, /<section class="s">/);
+  assert(!html.includes('<article class="s">'), 'should not use <article class="s">');
+});
+
+test('escapes script tag breakout in JSON-LD', () => {
+  const postWithScriptTag = {
+    title: 'Test Post with </script> in title',
+    slug: 'test-script-tag',
+    date: '2026-07-15T12:00:00.000Z',
+    category: 'Case Update',
+    author: 'Assured Law',
+    excerpt: 'A short excerpt with </script> text.',
+    content: 'Some **content** here.'
+  };
+  const html = renderPost(postWithScriptTag);
+
+  // Extract the JSON-LD script block
+  const jsonLdMatch = html.match(/<script type="application\/ld\+json">([^]*?)<\/script>/);
+  assert(jsonLdMatch, 'should contain JSON-LD script block');
+
+  const jsonLdContent = jsonLdMatch[1];
+  // Verify the JSON-LD does not contain raw </script> (it should be escaped)
+  assert(!jsonLdContent.includes('</script>'), 'JSON-LD should not contain raw </script>');
+  // Verify the < is escaped to <
+  assert(jsonLdContent.includes('\\u003c'), 'JSON-LD should contain escaped < as \\u003c');
+});

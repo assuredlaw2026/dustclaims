@@ -30,7 +30,7 @@ export function renderPost(post) {
     author: { '@type': 'Organization', name: author },
     publisher: { '@type': 'Organization', name: 'Assured Law' },
     mainEntityOfPage: url
-  });
+  }).replace(/</g, '\\u003c');
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -57,12 +57,12 @@ export function renderPost(post) {
 <div class="alert-bar">Temporary Restraining Order Issued Against Pulte Homes 3 Kids Mine Project <a href="/cases/pulte-lake-moor.html">Click Here For Updates</a></div>
 <nav class="site-nav" id="site-nav"></nav>
 <nav class="nav-mobile" id="mobile-nav"><a href="/">Home</a><a href="/private-enforcement/">Private Enforcement</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/" class="cta">Report a Claim</a></nav>
-<article class="s"><div class="section-inner blog-post">
+<section class="s"><div class="section-inner blog-post">
 <div class="blog-date">${dateStr} &nbsp;&middot;&nbsp; ${esc(post.category)}</div>
 <h1 class="post-title">${esc(post.title)}</h1>
 <div class="blog-post-body">${contentHtml}</div>
 <p class="blog-post-back"><a href="/blog/">&larr; Back to all posts</a></p>
-</div></article>
+</div></section>
 <footer class="site-footer" id="site-footer"></footer>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="/js/site.js"></script>
