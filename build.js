@@ -14,6 +14,11 @@ function esc(s = '') {
     .replace(/"/g, '&quot;');
 }
 
+// Validate slug: only lowercase letters, numbers, and hyphens.
+export function isValidSlug(slug) {
+  return /^[a-z0-9-]+$/.test(slug);
+}
+
 export function renderPost(post) {
   const url = `${SITE_URL}/blog/${post.slug}.html`;
   const image = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
@@ -75,6 +80,9 @@ export function generate() {
   const posts = data.posts || [];
   mkdirSync('blog', { recursive: true });
   for (const post of posts) {
+    if (!isValidSlug(post.slug)) {
+      throw new Error(`Invalid post slug ${JSON.stringify(post.slug)} — slugs must be lowercase letters, numbers, and hyphens only.`);
+    }
     writeFileSync(`blog/${post.slug}.html`, renderPost(post));
   }
   return posts.length;

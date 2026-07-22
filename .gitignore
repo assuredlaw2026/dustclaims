@@ -1,5 +1,4 @@
 node_modules/
-package-lock.json
 .DS_Store
 
 # Generated blog post pages (produced at build time; index.html is hand-authored)

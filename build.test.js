@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { renderPost } from './build.js';
+import { renderPost, isValidSlug } from './build.js';
 
 const post = {
   title: 'Test "Quote" Post',
@@ -69,4 +69,11 @@ test('escapes script tag breakout in JSON-LD', () => {
   assert(!jsonLdContent.includes('</script>'), 'JSON-LD should not contain raw </script>');
   // Verify the < is escaped to <
   assert(jsonLdContent.includes('\\u003c'), 'JSON-LD should contain escaped < as \\u003c');
+});
+
+test('isValidSlug accepts clean slugs and rejects unsafe ones', () => {
+  assert.equal(isValidSlug('tro-granted-pulte-lake-moor-july-2026'), true);
+  assert.equal(isValidSlug('../etc/passwd'), false);
+  assert.equal(isValidSlug('has spaces'), false);
+  assert.equal(isValidSlug('Has-Caps'), false);
 });
