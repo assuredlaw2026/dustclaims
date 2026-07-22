@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | Dust Claims</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.post-wrap{max-width:760px;margin:0 auto;padding:4rem 2.5rem 5rem;}
+.post-meta{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;}
+.post-title{font-family:var(--font-display);font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.05;letter-spacing:0.01em;text-transform:uppercase;color:var(--ink);margin-bottom:2rem;}
+.post-body h2{font-family:var(--font-display);font-size:1.6rem;letter-spacing:0.03em;text-transform:uppercase;color:var(--ink);margin:2.25rem 0 1rem;line-height:1.1;}
+.post-body h3{font-family:var(--font-display);font-size:1.15rem;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin:1.75rem 0 0.75rem;}
+.post-body p{font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.85;margin-bottom:1.25rem;}
+.post-body ol{margin:0 0 1.25rem 1.25rem;padding:0;}
+.post-body li{font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.8;margin-bottom:0.85rem;padding-left:0.35rem;}
+.post-body strong{color:var(--ink);font-weight:600;}
+@media(max-width:700px){.post-wrap{padding:2.5rem 1.5rem 3.5rem;}}
+</style>
+</head>
+<body>
+<div class="alert-bar">Temporary Restraining Order Issued Against Pulte Homes 3 Kids Mine Project <a href="/cases/pulte-lake-moor.html">Click Here For Updates</a></div>
+<nav class="site-nav" id="site-nav"></nav>
+<nav class="nav-mobile" id="mobile-nav"></nav>
+<div class="post-wrap">
+  <article id="post-container">
+    <p style="color:var(--muted);">Loading post...</p>
+  </article>
+</div>
+<footer class="site-footer" id="site-footer"></footer>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/js/site.js"></script>
+<script>renderNav('blog'); renderFooter(); loadSinglePost();</script>
+</body>
+</html>

@@ -35,16 +35,6 @@
 .ev-letter{font-family:var(--font-display);font-size:3rem;color:var(--orange);opacity:0.4;line-height:1;letter-spacing:0.04em;flex-shrink:0;}
 .ev-title{font-family:var(--font-display);font-size:1.2rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:0.2rem;}
 .ev-desc{font-size:0.78rem;color:var(--muted);font-weight:300;}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:2rem;}
-.video-item{background:#fff;border:1px solid var(--border);padding:1.25rem;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
-.video-embed{position:relative;aspect-ratio:16/9;background:var(--bg-3);margin-bottom:0.75rem;overflow:hidden;}
-.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
-.video-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1rem;}
-.video-ph-icon{font-family:var(--font-display);font-size:2.5rem;color:rgba(232,114,10,0.2);margin-bottom:0.35rem;}
-.video-ph-label{font-family:var(--font-display);font-size:1rem;letter-spacing:0.06em;color:rgba(26,24,21,0.25);margin-bottom:0.25rem;}
-.video-ph-note{font-size:0.68rem;color:var(--muted);font-weight:300;}
-.video-meta{font-size:0.72rem;color:var(--muted);font-weight:300;line-height:1.5;}
-.video-meta strong{color:var(--ink-2);font-weight:600;}
 @media(max-width:900px){
   .case-header-inner{grid-template-columns:1fr;gap:2rem;}
   .case-header{padding:3rem 1.5rem 2rem;}
@@ -148,8 +138,8 @@
         <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Construction noise and activity documented outside permitted hours, disturbing residents and damaging quality of life in violation of the Henderson Municipal Code</div>
       </div>
       <div class="allegation-box">
-        <div class="allegation-word">2:33<span style="font-size:1.1rem;">am</span></div>
-        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Security camera footage confirms excavator delivery to a public residential street at 2:33 a.m. on May 19, 2026. No permit or traffic control plan in evidence</div>
+        <div class="allegation-word">HEALTH</div>
+        <div class="allegation-desc" style="font-size:0.82rem;margin-top:0.5rem;">Fugitive dust is causing respiratory issues, eye irritation, sleep deprivation, and other health concerns</div>
       </div>
       <div class="allegation-box">
         <div class="allegation-word">ROAD</div>
@@ -174,16 +164,33 @@
   </div>
 </section>
 
+<!-- PROJECT AREA MAP -->
+<section class="s" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="eyebrow">The Site</div>
+    <h2 class="section-title">Permitted Area vs.<br>Area of Concern</h2>
+    <p class="lead">Clark County Air Quality dust permit 57933, held by PN II, Inc. (Pulte Homes) for the &ldquo;Lakemoor&rdquo; project, covers 726.76 acres between Racetrack Road and Lake Mead Parkway in Henderson.</p>
+    <figure style="margin:2.5rem 0 0;">
+      <img src="/img/lakemoor-permit-map.jpg" alt="Clark County Air Quality Map showing Dust Permit 57933 (Lakemoor / PN II, Inc.). The green area is the permitted project area under the Temporary Restraining Order; the red outline marks the surrounding areas of concern." style="width:100%;height:auto;display:block;border:1px solid var(--border);">
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem 2rem;margin-top:1.25rem;">
+        <div style="display:flex;align-items:center;gap:0.6rem;"><span style="width:26px;height:16px;background:rgba(126,193,116,0.55);border:1px solid #4f9c48;display:inline-block;flex-shrink:0;"></span><span style="font-size:0.85rem;color:var(--ink-2);font-weight:400;">Green: permitted project area under the Temporary Restraining Order (Dust Permit 57933)</span></div>
+        <div style="display:flex;align-items:center;gap:0.6rem;"><span style="width:26px;height:16px;border:3px solid #e8402a;display:inline-block;flex-shrink:0;"></span><span style="font-size:0.85rem;color:var(--ink-2);font-weight:400;">Red: surrounding areas of concern</span></div>
+      </div>
+      <figcaption style="font-size:0.72rem;color:var(--muted);font-weight:300;margin-top:1rem;line-height:1.6;">Source: Clark County, Nevada Air Quality Map (public record), Dust Permit 57933. Red boundary added for illustration.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- TIMELINE -->
 <section class="s" style="background:var(--bg);">
   <div class="section-inner">
     <div class="eyebrow">Pre-Litigation Record</div>
     <h2 class="section-title">Enforcement Timeline</h2>
-    <p class="lead">Before filing suit, Assured Law followed proper channels. This is the documented record of what was reported and what agencies failed to act on.</p>
+    <p class="lead">Construction activity at this site has been ongoing well before January 2026 and has been thoroughly documented throughout. Before filing suit, Assured Law followed proper channels, reporting violations and putting the responsible parties on notice. The timeline below is a summary of key events, not a complete record of every documented violation.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:2.5rem;">
       <div class="timeline-col">
         <div class="tl-item"><div class="tl-date">March 4, 2026</div><div class="tl-event"><strong>After-hours work documented</strong> at 6:54 p.m. and 7:00 p.m. Heavy equipment operating in active dust cloud at Athens Ave. and Racetrack Rd.</div></div>
-        <div class="tl-item"><div class="tl-date">April 8, 2026</div><div class="tl-event"><strong>Cease and desist letter issued</strong> to Western States Contracting, Inc. via certified mail and email. No remediation followed.</div></div>
+        <div class="tl-item"><div class="tl-date">April 8, 2026</div><div class="tl-event"><strong>Cease and desist letter issued</strong> to Western States Contracting, Inc. via USPS mail and email. No remediation followed.</div></div>
         <div class="tl-item"><div class="tl-date">May 19, 2026, 2:33 a.m.</div><div class="tl-event"><strong>Excavator delivered to public residential street.</strong> Captured on security camera. No permit or traffic control plan in evidence.</div></div>
         <div class="tl-item"><div class="tl-date">May 21, 2026</div><div class="tl-event">Multiple dump truck violations documented. <strong>Pool sediment confirmed</strong> in neighboring residential pool.</div></div>
         <div class="tl-item"><div class="tl-date">May 27, 2026</div><div class="tl-event"><strong>Private compliance notice</strong> issued to Defendants and forwarded to noticed agencies. No enforcement action followed from any agency.</div></div>
@@ -202,8 +209,7 @@
   <div class="section-inner">
     <div class="eyebrow">Filed Evidence</div>
     <h2 class="section-title">Exhibit Documentation</h2>
-    <p class="lead">Photographic and video evidence filed in support of Plaintiffs' Application. Exhibits A-1 through Series P.</p>
-    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;font-weight:300;">To add photos: save files as A-1.jpg, A-2.jpg, etc. and upload to the <code>/img/exhibits/</code> folder in GitHub. They will appear here automatically.</p>
+    <p class="lead">Photographic evidence filed in support of Plaintiffs' Application.</p>
 
     <div style="margin-top:3rem;">
       <!-- SERIES A -->
@@ -265,28 +271,11 @@
   </div>
 </section>
 
-<!-- VIDEO EVIDENCE -->
-<section class="s" style="background:var(--bg);">
-  <div class="section-inner">
-    <div class="eyebrow">Exhibit Series N</div>
-    <h2 class="section-title">Video Evidence, 22 Clips Filed</h2>
-    <p class="lead">Security camera, dashcam, and personal phone footage documenting violations from March through June 2026.</p>
-    <p style="font-size:0.78rem;color:var(--muted);margin-top:0.5rem;font-weight:300;">To add videos: upload to YouTube (unlisted) and replace the placeholder div with an iframe. Instructions in README.md.</p>
-    <div class="video-grid">
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-1</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-1</strong> May 21, 2026, 9:53 a.m.<br>Large dump truck raising dust</div></div>
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-4</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-4</strong> May 21, 2026, 2:24 p.m.<br>Carrying pipe down the road</div></div>
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-5</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-5</strong> May 21, 2026, 4:48 p.m.<br>Mine hauler blocking the street with dust</div></div>
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-11</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-11</strong> June 6, 2026, 12:31 p.m.<br>Active dust storm, HPD present, no enforcement</div></div>
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-12</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-12</strong> June 8, 2026, 7:01 a.m.<br>Start of work with no water applied</div></div>
-      <div class="video-item"><div class="video-embed"><div class="video-ph"><div class="video-ph-icon">&#9654;</div><div class="video-ph-label">N-15</div><div class="video-ph-note">Add YouTube embed</div></div></div><div class="video-meta"><strong>N-15</strong> June 9, 2026, 3:17 p.m.<br>Two trucks, dirt blowing into the house</div></div>
-    </div>
-  </div>
-</section>
 
 <!-- JOIN CTA -->
 <div class="cta-band">
   <h2>Affected by This Project?</h2>
-  <p>If you live near the Lake Moor development at Athens Avenue and Racetrack Road in Henderson and have experienced dust, property damage, or pool or HVAC contamination, you may have a claim. The review is free.</p>
+  <p>If you live near the Lake Moor / 3 Kids Mine development in Henderson and have experienced dust, health symptoms, property damage, or pool or HVAC contamination, you may have a claim. The review is free.</p>
   <a href="/contact/" class="btn-primary">Free Case Review</a>
 </div>
 

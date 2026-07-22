@@ -1,12 +1,27 @@
 /* ─── NAV ─── */
+// Active-site pages shown under the "Sites" dropdown. Edit this one list to add/rename sites.
+const SITES = [
+  ['/cases/three-kids-mine.html', '3 Kids Mine'],
+  ['/cases/pulte-lake-moor.html', 'Pulte Lake Moor'],
+  ['/cases/imagine-boulder-highway.html', 'Reimagine Boulder Highway'],
+  ['/cases/215-henderson.html', '215 Henderson'],
+  ['/cases/bad-lands.html', 'Bad Lands'],
+];
+
 function renderNav(activePage) {
   const nav = document.getElementById('site-nav');
   if (!nav) return;
+  const sitesActive = (activePage === 'cases' || activePage === 'sites') ? ' active' : '';
+  const sitesMenu = SITES.map(([href, label]) => `<li><a href="${href}">${label}</a></li>`).join('');
   nav.innerHTML = `
     <a href="/" class="nav-logo">Dust<span>Claims</span>.com</a>
     <ul class="nav-links">
       <li><a href="/" ${activePage==='home'?'class="active"':''}>Home</a></li>
       <li><a href="/private-enforcement/" ${activePage==='enforcement'?'class="active"':''}>Private Enforcement</a></li>
+      <li class="nav-item-dropdown">
+        <button type="button" class="nav-dd-toggle${sitesActive}" aria-haspopup="true" aria-expanded="false">Sites <span class="nav-dd-caret">&#9662;</span></button>
+        <ul class="nav-dd-menu">${sitesMenu}</ul>
+      </li>
       <li><a href="/blog/" ${activePage==='blog'?'class="active"':''}>Blog</a></li>
       <li><a href="/about/" ${activePage==='about'?'class="active"':''}>About</a></li>
       <li><a href="/contact/" class="nav-cta">Report a Claim</a></li>
@@ -15,10 +30,41 @@ function renderNav(activePage) {
       <span></span><span></span><span></span>
     </button>
   `;
-  const hamburger = document.getElementById('hamburger');
+
+  // Rebuild the mobile menu here too, so the Sites group appears on every page
+  // without editing each page's hardcoded markup.
   const mobileNav = document.getElementById('mobile-nav');
+  if (mobileNav) {
+    const mobileSites = SITES.map(([href, label]) => `<a href="${href}" class="nav-mobile-sub">${label}</a>`).join('');
+    mobileNav.innerHTML = `
+      <a href="/">Home</a>
+      <a href="/private-enforcement/">Private Enforcement</a>
+      <div class="nav-mobile-label">Sites</div>
+      ${mobileSites}
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="/contact/" class="cta">Report a Claim</a>
+    `;
+  }
+
+  const hamburger = document.getElementById('hamburger');
   if (hamburger && mobileNav) {
     hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  }
+
+  // Tap-to-open the Sites dropdown (CSS :hover covers desktop mouse users).
+  const ddToggle = nav.querySelector('.nav-dd-toggle');
+  if (ddToggle) {
+    ddToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const dd = ddToggle.closest('.nav-item-dropdown');
+      const open = dd.classList.toggle('open');
+      ddToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', () => {
+      const dd = nav.querySelector('.nav-item-dropdown.open');
+      if (dd) { dd.classList.remove('open'); ddToggle.setAttribute('aria-expanded', 'false'); }
+    });
   }
 }
 
@@ -135,7 +181,7 @@ async function loadBlogPosts() {
     container.innerHTML = posts.map(p => {
       const d = new Date(p.date);
       const dateStr = d.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
-      return `<a class="blog-card" href="/blog/${p.slug}.html">
+      return `<a class="blog-card" href="/blog/post.html?slug=${encodeURIComponent(p.slug)}">
         <div class="blog-date">${dateStr} &nbsp;&middot;&nbsp; ${p.category}</div>
         <h3>${p.title}</h3>
         <p class="blog-excerpt">${p.excerpt}</p>
@@ -143,6 +189,55 @@ async function loadBlogPosts() {
     }).join('');
   } catch(e) {
     container.innerHTML = '<div style="text-align:center;padding:4rem;color:var(--muted);">Unable to load posts.</div>';
+  }
+}
+
+/* ─── SINGLE BLOG POST ─── */
+// Minimal Markdown -> HTML for post bodies stored in _data/posts.json.
+// Handles ## / ### headings, **bold**, numbered lists, and paragraphs.
+function mdToHtml(md) {
+  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const inline = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  let html = '', inList = false;
+  const closeList = () => { if (inList) { html += '</ol>'; inList = false; } };
+  (md || '').split('\n').forEach(raw => {
+    const line = raw.trim();
+    let m;
+    if (!line) { closeList(); return; }
+    if (m = line.match(/^###\s+(.*)/)) { closeList(); html += `<h3>${inline(m[1])}</h3>`; }
+    else if (m = line.match(/^##\s+(.*)/)) { closeList(); html += `<h2>${inline(m[1])}</h2>`; }
+    else if (m = line.match(/^\d+\.\s+(.*)/)) { if (!inList) { html += '<ol>'; inList = true; } html += `<li>${inline(m[1])}</li>`; }
+    else { closeList(); html += `<p>${inline(line)}</p>`; }
+  });
+  closeList();
+  return html;
+}
+
+async function loadSinglePost() {
+  const container = document.getElementById('post-container');
+  if (!container) return;
+  const slug = new URLSearchParams(location.search).get('slug');
+  try {
+    const res = await fetch('/_data/posts.json');
+    const data = await res.json();
+    const post = (data.posts || []).find(p => p.slug === slug);
+    if (!post) {
+      document.title = 'Post Not Found | Dust Claims';
+      container.innerHTML = '<h1 class="post-title">Post Not Found</h1><p style="color:var(--muted);">We could not find that post. <a href="/blog/" style="color:var(--orange);">Return to the blog</a>.</p>';
+      return;
+    }
+    const d = new Date(post.date);
+    const dateStr = d.toLocaleDateString('en-US', {year:'numeric',month:'long',day:'numeric'});
+    document.title = `${post.title} | Dust Claims`;
+    container.innerHTML = `
+      <div class="post-meta">${dateStr} &nbsp;&middot;&nbsp; ${post.category}${post.author ? ' &nbsp;&middot;&nbsp; ' + post.author : ''}</div>
+      <h1 class="post-title">${post.title}</h1>
+      <div class="post-body">${mdToHtml(post.content)}</div>
+      <div style="margin-top:2.5rem;border-top:1px solid var(--border);padding-top:1.5rem;">
+        <a href="/blog/" style="color:var(--orange);font-weight:600;font-size:0.85rem;letter-spacing:0.04em;text-decoration:none;">&larr; Back to all posts</a>
+      </div>`;
+  } catch(e) {
+    container.innerHTML = '<p style="color:var(--muted);">Unable to load this post.</p>';
   }
 }
 

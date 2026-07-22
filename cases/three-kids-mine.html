@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Kids Mine Dust Claims | Dust Claims</title>
+<meta name="description" content="Homeowners near the Three Kids Mine site in Henderson, Nevada may have been exposed to toxic dust containing lead, arsenic, and manganese. Assured Law is evaluating claims. Free review.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+.case-header{background:var(--bg-2);padding:4rem 2.5rem 3rem;border-bottom:1px solid var(--border);}
+.case-header-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:1.3fr 0.7fr;gap:4rem;align-items:start;}
+.case-h1{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink);margin-bottom:0.75rem;}
+.case-subtitle{font-family:var(--font-display);font-size:1rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem;}
+.case-status-box{background:#fff;border:1px solid var(--border);padding:1.75rem;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.status-row{display:flex;justify-content:space-between;align-items:flex-start;padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.82rem;gap:1rem;}
+.status-row:last-child{border-bottom:none;}
+.status-label{color:var(--muted);font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;flex-shrink:0;padding-top:0.1rem;}
+.status-value{color:var(--ink-2);font-weight:400;text-align:right;line-height:1.4;}
+.mine-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;margin-top:3rem;}
+.mine-text p{font-size:1rem;color:var(--ink-2);font-weight:300;line-height:1.85;margin-bottom:1.25rem;}
+.mine-text p strong{color:var(--ink);font-weight:600;}
+.mine-text p em{color:var(--orange);font-style:normal;font-weight:600;}
+.timeline-col{position:relative;padding-left:2rem;}
+.timeline-col::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:linear-gradient(to bottom,var(--orange),transparent);}
+.tl-item{position:relative;padding-bottom:1.75rem;}
+.tl-item::before{content:'';position:absolute;left:-2rem;top:7px;width:8px;height:8px;border-radius:50%;background:var(--orange);}
+.tl-date{font-family:var(--font-display);font-size:1.5rem;letter-spacing:0.04em;color:var(--orange);line-height:1;margin-bottom:0.3rem;}
+.tl-event{font-size:0.88rem;color:var(--ink-2);font-weight:300;line-height:1.65;}
+.tl-event strong{color:var(--ink);font-weight:600;}
+.claims-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem;}
+.claim{background:#fff;border:1px solid var(--border);border-top:3px solid var(--orange);padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,0.04);position:relative;overflow:hidden;}
+.claim-num{font-family:var(--font-display);font-size:4rem;color:rgba(232,114,10,0.12);line-height:1;position:absolute;top:0.75rem;right:1.25rem;letter-spacing:0.04em;}
+.claim-tag{display:inline-block;font-size:0.66rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--orange);background:rgba(232,114,10,0.1);padding:0.25rem 0.6rem;margin-bottom:0.75rem;}
+.claim h3{font-family:var(--font-display);font-size:1.3rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);margin-bottom:0.75rem;line-height:1.15;}
+.claim p{font-size:0.88rem;color:var(--ink-2);font-weight:300;line-height:1.7;}
+.claim p strong{color:var(--ink);font-weight:600;}
+.claim-cite{margin-top:1rem;font-size:0.7rem;color:var(--muted);font-weight:400;letter-spacing:0.04em;border-top:1px solid var(--border);padding-top:0.75rem;}
+.claim-cite strong{color:var(--ink-2);}
+.eligibility-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start;}
+.check-list{list-style:none;}
+.check-list li{display:flex;align-items:flex-start;gap:0.75rem;padding:0.9rem 0;border-bottom:1px solid var(--border);font-size:0.95rem;color:var(--ink-2);font-weight:300;line-height:1.6;}
+.check-list li:last-child{border-bottom:none;}
+.check-icon{flex-shrink:0;width:20px;height:20px;background:rgba(232,114,10,0.12);border:1px solid rgba(232,114,10,0.4);display:flex;align-items:center;justify-content:center;margin-top:3px;}
+.check-icon svg{width:11px;height:11px;stroke:var(--orange);fill:none;}
+.callout{background:#fff;border:1px solid var(--border);border-left:4px solid var(--orange);padding:2rem;box-shadow:0 1px 4px rgba(0,0,0,0.05);}
+.callout h3{font-family:var(--font-display);font-size:1.4rem;letter-spacing:0.04em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;}
+.callout p{font-size:0.9rem;color:var(--ink-2);font-weight:300;line-height:1.75;margin-bottom:0.75rem;}
+.callout p:last-child{margin-bottom:0;}
+.callout strong{color:var(--ink);font-weight:600;}
+@media(max-width:900px){
+  .case-header-inner{grid-template-columns:1fr;gap:2rem;}
+  .case-header{padding:3rem 1.5rem 2rem;}
+  .mine-grid,.claims-grid,.eligibility-grid{grid-template-columns:1fr;gap:2.5rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="alert-bar">
+  Temporary Restraining Order Issued Against Pulte Homes 3 Kids Mine Project
+  <a href="/cases/pulte-lake-moor.html">Click Here For Updates</a>
+</div>
+
+<nav class="site-nav" id="site-nav"></nav>
+<nav class="nav-mobile" id="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/private-enforcement/">Private Enforcement</a>
+  <a href="/blog/">Blog</a>
+  <a href="/about/">About</a>
+  <a href="/contact/" class="cta">Report a Claim</a>
+</nav>
+
+<!-- CASE HEADER -->
+<header class="case-header">
+  <div class="case-header-inner">
+    <div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem;">
+        <span class="badge badge-monitoring">Monitoring &amp; Evaluating Claims</span>
+        <span class="badge badge-gray">Toxic Dust Exposure</span>
+      </div>
+      <h1 class="case-h1">Three Kids Mine<br>Dust Claims</h1>
+      <div class="case-subtitle">Henderson Remediation Area, Clark County, Nevada</div>
+      <p class="lead">If you own a home near the Three Kids Mine site in Henderson, Nevada, you may have been exposed to toxic dust containing lead, arsenic, and manganese from decades of contamination and the ongoing remediation. Developers and builders were legally required to prevent that dust from reaching your property. Assured Law is evaluating claims on behalf of affected homeowners.</p>
+      <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="/contact/" class="btn-primary">Report a Claim, Free Review</a>
+        <a href="#claims" class="btn-outline">See Your Claims</a>
+      </div>
+    </div>
+    <div>
+      <div class="case-status-box">
+        <div class="status-row"><span class="status-label">Location</span><span class="status-value">Lake Las Vegas area<br>Henderson, Nevada</span></div>
+        <div class="status-row"><span class="status-label">Site Size</span><span class="status-value">1,165 acres</span></div>
+        <div class="status-row"><span class="status-label">Contaminants</span><span class="status-value">Lead, arsenic, manganese, petroleum</span></div>
+        <div class="status-row"><span class="status-label">Federal Act</span><span class="status-value">Three Kids Mine Remediation Act, 2014</span></div>
+        <div class="status-row"><span class="status-label">Record of Decision</span><span class="status-value">NDEP, November 2023</span></div>
+        <div class="status-row"><span class="status-label">Cleanup Began</span><span class="status-value">May 2024</span></div>
+        <div class="status-row"><span class="status-label">Firm</span><span class="status-value">Joe Yakubik, Esq., Bar No. 17015<br>Assured Law</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- BACKGROUND -->
+<section class="s" style="background:var(--bg);">
+  <div class="section-inner">
+    <div class="eyebrow">Background</div>
+    <h2 class="section-title">What Is the<br>Three Kids Mine?</h2>
+    <p class="lead">A former open-pit manganese mine turned federally recognized contamination site, now being cleaned up while neighboring homeowners bear the cost.</p>
+    <div class="mine-grid">
+      <div class="mine-text">
+        <p>The <strong>Three Kids Mine</strong> was an open-pit manganese mine discovered in Clark County, Nevada in 1917. During two World Wars, manganese from the mine was used in military weapons and equipment. A mill constructed in <em>1942</em> processed ore on-site until all pits were exhausted and operations permanently ceased in <em>1961</em>.</p>
+        <p>Left behind were open pits, waste rock, ore yards, a mill site, and tailings ponds loaded with <strong>dusts, residues, and processing wastes</strong> containing lead, arsenic, manganese, and petroleum, confirmed by a Phase I Environmental Site Assessment in 2007.</p>
+        <p>Despite these known hazards, parcels from the property were sold off and <strong>redeveloped into residential communities</strong>. In 2024, land transfer was completed and active cleanup began, but not before years of toxic dust exposure for neighboring homeowners.</p>
+        <p>In March 2023, the Nevada Division of Environmental Protection (NDEP) hosted a public meeting in Henderson. By November 2023, NDEP issued its Record of Decision for site cleanup. A Perimeter Air Monitoring Plan was put in place as cleanup commenced in <em>May 2024</em>.</p>
+      </div>
+      <div class="timeline-col">
+        <div class="tl-item"><div class="tl-date">1917</div><div class="tl-event"><strong>Mine discovered</strong> in Clark County, NV. Manganese production begins for WWI military use.</div></div>
+        <div class="tl-item"><div class="tl-date">1942</div><div class="tl-event"><strong>On-site mill constructed</strong> to process manganese ore during WWII. Processing wastes accumulate.</div></div>
+        <div class="tl-item"><div class="tl-date">1961</div><div class="tl-event"><strong>All operations permanently cease.</strong> Contaminated tailings ponds, waste rock, and ore yards left on site.</div></div>
+        <div class="tl-item"><div class="tl-date">1980s</div><div class="tl-event"><strong>Parcels sold and redeveloped</strong>, residential communities built adjacent to contaminated land.</div></div>
+        <div class="tl-item"><div class="tl-date">2007</div><div class="tl-event"><strong>Phase I ESA confirms</strong> lead, arsenic, manganese, and petroleum contamination on-site.</div></div>
+        <div class="tl-item"><div class="tl-date">2014</div><div class="tl-event"><strong>Federal Three Kids Mine Remediation Act enacted.</strong> Henderson Redevelopment Agency designated as responsible party.</div></div>
+        <div class="tl-item"><div class="tl-date">2023</div><div class="tl-event"><strong>NDEP public meeting.</strong> Record of Decision issued November 2023 for the selected cleanup approach.</div></div>
+        <div class="tl-item"><div class="tl-date">2024</div><div class="tl-event"><strong>Land transfer completed February 2024.</strong> Active site cleanup and air monitoring begins May 2024.</div></div>
+      </div>
+    </div>
+    <div class="allegations-grid" style="margin-top:3.5rem;">
+      <div class="allegation-box"><div class="allegation-word">Pb</div><div class="allegation-desc">Lead. Neurotoxin with no safe exposure level. Linked to cognitive damage, especially in children.</div></div>
+      <div class="allegation-box"><div class="allegation-word">As</div><div class="allegation-desc">Arsenic. Group 1 carcinogen. Chronic exposure linked to lung and bladder cancer.</div></div>
+      <div class="allegation-box"><div class="allegation-word">Mn</div><div class="allegation-desc">Manganese. Airborne exposure causes neurological damage resembling Parkinson's disease.</div></div>
+      <div class="allegation-box"><div class="allegation-word">HC</div><div class="allegation-desc">Petroleum. Hydrocarbon contamination of soils affecting groundwater and air quality.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL CLAIMS -->
+<section class="s" style="background:var(--bg-2);" id="claims">
+  <div class="section-inner">
+    <div class="eyebrow">Your Rights</div>
+    <h2 class="section-title">Legal Claims Available<br>to Homeowners</h2>
+    <p class="lead">Developers and builders were required by Clark County Air Quality Regulations to prevent toxic dust from reaching your property. Multiple laws were likely violated, and those violations are actionable.</p>
+    <div class="claims-grid">
+      <div class="claim">
+        <div class="claim-num">01</div>
+        <span class="claim-tag">CC AQR &sect; 40</span>
+        <h3>Nuisance, Prohibited Air Contaminants</h3>
+        <p>Under Clark County Air Quality Regulations Section 40, <strong>no person shall cause or allow discharge of air contaminants that create a nuisance.</strong> Toxic dust emissions from construction and remediation activities at the Three Kids Mine site that affected your property constitute a prohibited nuisance condition.</p>
+        <div class="claim-cite"><strong>Authority:</strong> CC AQR Section 40, Prohibition of Nuisance Conditions</div>
+      </div>
+      <div class="claim">
+        <div class="claim-num">02</div>
+        <span class="claim-tag">CC AQR &sect; 41</span>
+        <h3>Fugitive Dust, Failure to Control</h3>
+        <p>Section 41 requires all persons engaged in demolition, grading, clearing, and construction to take <strong>all reasonable precautions</strong> to prevent fugitive dust from becoming airborne. Visible dust plumes extending beyond property lines, dust on haul trucks, and trackout onto paved roads near the site are all documented violations triggering liability.</p>
+        <div class="claim-cite"><strong>Authority:</strong> CC AQR Section 41, Fugitive Dust Prohibitions &sect;&sect; 41.1.1&ndash;41.1.2</div>
+      </div>
+      <div class="claim">
+        <div class="claim-num">03</div>
+        <span class="claim-tag">CC AQR &sect; 90</span>
+        <h3>Open Areas &amp; Vacant Lots, Stabilization Failure</h3>
+        <p>Section 90 mandates that owners and operators of disturbed open areas of 5,000+ sq ft <strong>must implement dust control within 30 days</strong> of discovering disturbance. Failure to establish a visible soil crust, maintain 20% non-erodible cover, or achieve the required Threshold Friction Velocity constitutes a direct regulatory violation affecting neighboring homeowners.</p>
+        <div class="claim-cite"><strong>Authority:</strong> CC AQR Section 90, Fugitive Dust from Open Areas and Vacant Lots &sect;&sect; 90.2.1, 90.2.1.2</div>
+      </div>
+      <div class="claim">
+        <div class="claim-num">04</div>
+        <span class="claim-tag">CC AQR &sect; 94</span>
+        <h3>Construction Dust Permit Violations</h3>
+        <p>Section 94 requires a Dust Control Operating Permit (DCOP) for all construction disturbing 0.25+ acres, with mandatory Best Management Practices, 24/7 dust control, certified Dust Control Monitors for 50+ acres of disturbed soil, and immediate work stoppage when dust plumes exceed 100 yards. <strong>Violations of any DCOP condition are enforceable violations of Clark County Air Quality Regulations.</strong></p>
+        <div class="claim-cite"><strong>Authority:</strong> CC AQR Section 94, Permitting and Dust Control for Construction &sect;&sect; 94.5, 94.8, 94.13, 94.14</div>
+      </div>
+      <div class="claim">
+        <div class="claim-num">05</div>
+        <span class="claim-tag">CC AQR &sect; 8</span>
+        <h3>Individual and Collective Liability</h3>
+        <p>Section 8 of the Clark County Air Quality Regulations provides that <strong>all persons owning, operating, or in control of property who cause, permit, or participate in any violation are individually and collectively liable.</strong> This means developers, home builders, contractors, and site operators can all be held responsible for dust exposure at your home.</p>
+        <div class="claim-cite"><strong>Authority:</strong> CC AQR Section 8, Persons Liable for Penalties &sect; 8.1</div>
+      </div>
+      <div class="claim">
+        <div class="claim-num">06</div>
+        <span class="claim-tag">Common Law</span>
+        <h3>Property Damage &amp; Diminished Value</h3>
+        <p>Beyond regulatory violations, homeowners may pursue claims for <strong>diminished property value, cost of remediation of affected property, medical monitoring costs, and personal injury</strong> arising from exposure to lead, arsenic, and manganese released during construction and redevelopment activities adjacent to the Three Kids Mine site.</p>
+        <div class="claim-cite"><strong>Authority:</strong> Nevada tort law, nuisance, trespass to land, negligence, strict liability</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="s" style="background:var(--bg);" id="eligibility">
+  <div class="section-inner">
+    <div class="eyebrow">Who Qualifies</div>
+    <h2 class="section-title">Are You Eligible?</h2>
+    <p class="lead">You may have a claim if you owned residential property near the Three Kids Mine site during any period of active construction or remediation.</p>
+    <div class="eligibility-grid">
+      <div>
+        <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">You may qualify if you:</p>
+        <ul class="check-list">
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Own or owned a home in Henderson, NV near the Three Kids Mine site (Lake Las Vegas area, Boulder City corridor, or adjacent neighborhoods)</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Have experienced visible dust, soil contamination, or air quality issues at or near your property</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Live within proximity to construction or remediation activities connected to the Three Kids Mine development</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Have experienced health symptoms consistent with lead, arsenic, or manganese exposure</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Have noticed dust plumes, trackout, or loose soil from nearby construction or development sites</li>
+          <li><span class="check-icon"><svg viewBox="0 0 10 10" stroke-width="2"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></span>Were not adequately informed of contamination risks before purchasing or building on your property</li>
+        </ul>
+      </div>
+      <div>
+        <div class="callout">
+          <h3>Don't Wait to Find Out</h3>
+          <p>Nevada statutes of limitations mean your window to file a claim may be limited. The longer you wait, the harder it becomes to preserve evidence and establish your case.</p>
+          <p>Even if you are <strong>unsure whether you qualify</strong>, a free consultation with Assured Law takes only a few minutes and costs you nothing. We only get paid if you win.</p>
+          <p>Developers and builders had a legal obligation to protect you from toxic dust exposure. If they failed, <strong>you deserve answers, and compensation.</strong></p>
+        </div>
+        <div class="card" style="margin-top:1.5rem;">
+          <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Key Regulatory Thresholds</p>
+          <p style="font-size:0.88rem;color:var(--ink-2);font-weight:300;line-height:1.75;">Dust plumes extending <strong style="color:var(--ink);font-weight:600;">more than 100 yards</strong> from origin, <strong style="color:var(--ink);font-weight:600;">20%+ opacity emissions</strong>, trackout exceeding <strong style="color:var(--ink);font-weight:600;">50 feet in length</strong>, and failure to stabilize disturbed soils within <strong style="color:var(--ink);font-weight:600;">30 days</strong> of disturbance are all documented violation categories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="s" style="background:var(--bg-2);">
+  <div class="section-inner">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="section-title">Your Path to<br>Compensation</h2>
+    <p class="lead">Getting started is straightforward and risk-free. Assured Law handles everything, and you pay nothing unless we recover for you.</p>
+    <div class="steps-row">
+      <div class="step"><div class="step-num">01</div><h4>Free Consultation</h4><p>Submit the case review form or call us. We review your situation and explain whether you have a viable claim, no charge, no commitment.</p></div>
+      <div class="step"><div class="step-num">02</div><h4>Case Evaluation</h4><p>We investigate your property's proximity to the site, gather evidence of regulatory violations, and document your exposure history and damages.</p></div>
+      <div class="step"><div class="step-num">03</div><h4>Pursue Your Claim</h4><p>If you qualify, we pursue recovery against the Three Kids Mine developers and home builders. We fight on your behalf.</p></div>
+      <div class="step"><div class="step-num">04</div><h4>Recover Damages</h4><p>Compensation may include property damage, diminished home value, medical monitoring, and health-related damages. We only collect a fee if you win.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-band">
+  <h2>Get Your Free Case Review</h2>
+  <p>If you own a home near the Three Kids Mine site and have experienced dust, health symptoms, or property damage, you may have a claim. Free review. Contingency fees. You pay nothing unless we recover.</p>
+  <a href="/contact/" class="btn-primary">Report a Claim, Free Review</a>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="/js/site.js"></script>
+<script>renderNav('cases'); renderFooter();</script>
+</body>
+</html>
